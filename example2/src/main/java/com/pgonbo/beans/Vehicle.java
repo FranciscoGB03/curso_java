@@ -16,6 +16,7 @@ public class Vehicle {
         this.name=name;
     }
 
+    // spring ejecuta este método después de crear el Bean
     @PostConstruct
     public void initialize(){
         this.name="Honda";
@@ -26,6 +27,7 @@ public class Vehicle {
                 "Printing Hello from Component Vehicle Bean");
     }
 
+    //Spring se asegurará de llamar este método solo antes de limpiar y destruir el contexto.
     @PreDestroy
     public void destroy(){
         System.out.println("Destruyendo Vehicle Bean");
