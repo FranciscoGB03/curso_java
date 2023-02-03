@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 public class Person {
     private String name="Larry";
 
+    @Autowired //Es opcional a partir de Spring version 4.3 siempre y cuando solo haya un constructor
     public Person(Vehicle vehicle){
         System.out.println("Person bean created by Spring");
         this.vehicle=vehicle;
@@ -32,7 +33,7 @@ public class Person {
         return vehicle;
     }
 
-    @Autowired
+    /*@Autowired*/ //autowire a través de método setter no es recomendado
     public void setVehicle(Vehicle vehicle){
         this.vehicle=vehicle;
     }
